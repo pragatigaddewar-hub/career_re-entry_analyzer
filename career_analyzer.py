@@ -7,7 +7,7 @@ st.title("Career Re-entry Analyzer")
 st.subheader("Personal & Career Information")
 
 name = st.text_input("Name :")
-age = st.number_input("Age :",min_value=0,step=1)
+age = st.number_input("Age :",min_value=1,max_value=100,step=1)
 education = st.text_input("Education")
 year = st.number_input("Graduation Year :",step=1)
 gap = st.number_input("Career Gap :",step=1)
@@ -51,7 +51,7 @@ else:
 
 if skill_scores >= 450 and gap >= 10:
     suggestion = "Try For Job Application and Interviews"
-elif skill_scores >= 300 and gap >= 10:
+elif skill_scores >= 300:
     suggestion = "Please Improve Your Skills"
 
 else:
@@ -142,6 +142,8 @@ if submit:
         st.success(f"You selected {job_role},Your skills are good and career gap is high,you can proceed for job applications and interviews.")
     elif skill_scores >= 440 and career_gap == 'Moderate':
         st.info(f"You selected {job_role},Your skills are good and career gap is moderate,you can proceed for job applications.")
+    elif skill_scores >= 440 and career_gap == 'Less':
+        st.success(f"You selected {job_role}, your skills are excellent and you have little to no career gap — you're fully ready to apply for jobs and interviews.")    
     else: 
         st.warning(f"You selected {job_role},keep improving your skills and stay consistent with your career preparation.")       
 
