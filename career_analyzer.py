@@ -49,13 +49,17 @@ else:
     career_readiness = "Needs Improvement"    
 
 
-if skill_scores >= 450 and gap >= 10:
+if skill_scores >= 440 and gap >= 10:
     suggestion = "Try For Job Application and Interviews"
-elif skill_scores >= 300:
-    suggestion = "Please Improve Your Skills"
+elif skill_scores >= 300 and gap >= 10:
+  suggestion = "Please Improve Your Skills"
 
 else:
-    suggestion = "Try For Job Application"
+    # if skill score is low, suggest improving skills first
+    if skill_scores >= 350:
+        suggestion = "Try For Job Application"
+    else:
+        suggestion = "Please Improve Your Skills"
 
 if gap >= 10:
     career_gap = 'High'
